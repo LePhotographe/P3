@@ -72,6 +72,7 @@ button {
   font-size: large;
   font-weight: 400;
   letter-spacing: 1px;
+  padding: 0px 10px;
 }
 .section1__explorer {
   font-family: "Roboto", sans-serif;
@@ -81,7 +82,7 @@ button {
   padding: 20px 30px;
   border-radius: 50px;
   background: rgb(255, 121, 218);
-  background: linear-gradient(175deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  background: linear-gradient(175deg, #FF79DA 0%, #9356DC 100%);
   margin-bottom: 50px;
 }
 
