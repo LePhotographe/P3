@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-width: 320px;
+  max-width: 450px;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Shrikhand", cursive;
+}
+
+nav {
+  width: 100%;
+}
+
+button {
+  all: initial;
+  cursor: pointer;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5% 0%;
+  font-size: xx-large;
+}
+
+.localisation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5% 0%;
+  background-color: #e0e0e0;
+  font-size: 20px;
+}
+
+.localisation__marker {
+  padding-right: 25px;
+}
+
+.section1 {
+  height: 350px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.section1__accroche {
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0% 10%;
+}
+
+.section1__description {
+  color: dimgray;
+  font-size: large;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0px 10px;
+}
+
+.section1__explorer {
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  font-weight: 700;
+  color: #f7f7f7;
+  padding: 20px 30px;
+  border-radius: 50px;
+  background: #ff79da;
+  background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  margin-bottom: 50px;
+}
+
+.section2 {
+  padding: 0% 10%;
+}
+
+.section2__titre {
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.section2__help {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=main.css.map */

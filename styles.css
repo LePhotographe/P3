@@ -18,7 +18,12 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Shrikhand", cursive;
 }
 
@@ -82,8 +87,14 @@ button {
   padding: 20px 30px;
   border-radius: 50px;
   background: rgb(255, 121, 218);
-  background: linear-gradient(175deg, #FF79DA 0%, #9356DC 100%);
+  background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
   margin-bottom: 50px;
+}
+.section2__titre {
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0% 10%;
 }
 
 /*# sourceMappingURL=styles.css.map */

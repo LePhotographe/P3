@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+
+$primaire: #9356dc;
+$secondaire: #ff79da;
+$tertiaire: #99e2d0;
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  min-width: 320px;
+  max-width: 450px;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Shrikhand", cursive;
+}
+
+nav {
+  width: 100%;
+}
+
+button {
+  all: initial;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0%;
+  font-size: xx-large;
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0%;
+  background-color: rgb(224, 224, 224);
+  font-size: 20px;
+
+  &__marker {
+    padding-right: 25px;
+  }
+}
+
+.section1 {
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+
+  &__accroche {
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 0% 10%;
+  }
+
+  &__description {
+    color: dimgray;
+    font-size: large;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 0px 10px;
+  }
+
+  &__explorer {
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    font-weight: 700;
+    color: rgb(247, 247, 247);
+    padding: 20px 30px;
+    border-radius: 50px;
+    background: rgb(255, 121, 218);
+    background: linear-gradient(175deg, $secondaire 0%, $primaire 100%);
+    margin-bottom: 50px;
+  }
+}
+.section2 {
+  padding: 0% 10%;
+  &__titre {
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  &__help {
+    display: flex;
+    justify-content: center;
+  }
+}
