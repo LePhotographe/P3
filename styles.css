@@ -90,11 +90,25 @@ button {
   background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
   margin-bottom: 50px;
 }
+
+.section2 {
+  padding: 0% 10%;
+}
 .section2__titre {
   margin-top: 50px;
   font-size: 30px;
   font-weight: 700;
-  padding: 0% 10%;
+}
+.section2__help {
+  display: flex;
+  justify-content: center;
+}
+.section2__help--num {
+  height: 20px;
+  width: 20px;
+  background-color: #9356dc;
+  border-radius: 50%;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

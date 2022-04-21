@@ -109,5 +109,13 @@ button {
   &__help {
     display: flex;
     justify-content: center;
+
+    &--num{
+      height: 20px;
+      width: 20px;
+      background-color: $primaire;
+      border-radius: 50%;
+      color: white;
+    }
   }
 }
