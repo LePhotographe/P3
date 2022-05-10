@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 * {
   margin: 0px;
@@ -16,6 +17,10 @@ body {
   background-color: white;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
+
+main {
+  width: 100%;
 }
 
 h1,
@@ -37,10 +42,14 @@ button {
 }
 
 .logo {
+  position: sticky;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 5% 0%;
+  padding: 5% 0%;
   font-size: xx-large;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .localisation {
@@ -48,10 +57,10 @@ button {
   justify-content: center;
   padding: 5% 0%;
   background-color: rgb(224, 224, 224);
-  font-size: 20px;
+  font-size: 15px;
 }
 .localisation__marker {
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .section1 {
@@ -67,22 +76,26 @@ button {
   background-color: rgb(247, 247, 247);
 }
 .section1__accroche {
+  width: 65%;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   padding: 0% 10%;
 }
 .section1__description {
+  width: 90%;
   color: dimgray;
   font-size: large;
   font-weight: 400;
   letter-spacing: 1px;
   padding: 0px 10px;
+  margin-bottom: 20px;
 }
 .section1__explorer {
+  /*Bouton*/
   font-family: "Roboto", sans-serif;
   font-size: large;
-  font-weight: 700;
+  font-weight: 500;
   color: rgb(247, 247, 247);
   padding: 20px 30px;
   border-radius: 50px;
@@ -92,23 +105,51 @@ button {
 }
 
 .section2 {
-  padding: 0% 10%;
+  /* a supprimer*/
+  margin-bottom: 100px;
 }
 .section2__titre {
+  margin: 7%;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
 }
-.section2__help {
+.section2__steps {
+  /*Container des div étapes*/
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin: 0% 10%;
+  margin-top: 50px;
 }
-.section2__help--num {
-  height: 20px;
-  width: 20px;
-  background-color: #9356dc;
-  border-radius: 50%;
+.section2__steps--step1, .section2__steps--step2, .section2__steps--step3 {
+  /*boites des étapes*/
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  margin: 15px 0px;
+  border-radius: 20px;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.section2__steps--step1::before, .section2__steps--step2::before, .section2__steps--step3::before {
+  content: attr(data-step);
+  font-size: small;
   color: white;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  translate: -45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #9356dc;
+}
+.section2__steps--step1 i, .section2__steps--step2 i, .section2__steps--step3 i {
+  font-size: 19px;
+}
+.section2__steps--step1--text, .section2__steps--step2--text, .section2__steps--step3--text {
+  margin: auto;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=styles.css.map */
