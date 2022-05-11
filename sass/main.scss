@@ -3,7 +3,13 @@
 $primaire: #9356dc;
 $secondaire: #ff79da;
 $tertiaire: #99e2d0;
+$grisclair: rgb(247, 247, 247);
 $shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.1);
+$transition: ease 0.3s;
+
+html{
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0px;
@@ -18,7 +24,7 @@ body {
   align-items: center;
   align-content: center;
   min-width: 320px;
-  max-width: 450px;
+  max-width: 450px; /* à supprimer une fois la version mobile terminée*/
   background-color: white;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -26,6 +32,11 @@ body {
 
 main{
   width: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }
 
 h1,
@@ -41,7 +52,7 @@ nav {
   width: 100%;
 }
 
-button {
+button { /*reset du style des boutons*/
   all: initial;
   cursor: pointer;
 }
@@ -69,7 +80,7 @@ button {
   }
 }
 
-.section1 {
+.section1 { /*début de la section1*/
   height: 350px;
   width: 100%;
   display: flex;
@@ -79,7 +90,7 @@ button {
   align-items: center;
   align-content: stretch;
   text-align: center;
-  background-color: rgb(247, 247, 247);
+  background-color: $grisclair;
 
   &__accroche {
     width: 65%;
@@ -103,30 +114,35 @@ button {
     font-family: "Roboto", sans-serif;
     font-size: large;
     font-weight: 500;
-    color: rgb(247, 247, 247);
+    color: $grisclair;
     padding: 20px 30px;
     border-radius: 50px;
     background: rgb(255, 121, 218);
     background: linear-gradient(175deg, $secondaire 0%, $primaire 100%);
     margin-bottom: 50px;
+    transition: $transition;
+
+    &:hover{
+      box-shadow: 0px 0px 5px $primaire;
+    }
   }
 }
-.section2 {
+/*fin de la section1*/
+
+.section2 {/*début de la section2*/
 
   /* a supprimer*/
-  margin-bottom: 100px;
+  padding: 10% 0%;
 
   &__titre {
-    margin: 7%;
-    margin-top: 50px;
+    margin: 0% 7%;
     font-size: 25px;
     font-weight: 700;
   }
   &__steps{ /*Container des div étapes*/
     display: flex;
     flex-direction: column;
-    margin: 0% 10%;
-    margin-top: 50px ;
+    margin: 5% 10%;
 
       &--step1, 
       &--step2, 
@@ -136,8 +152,11 @@ button {
         padding: 30px;
         margin: 15px 0px;
         border-radius: 20px;
-        background-color: rgb(247, 247, 247);
+        background-color: $grisclair;
         box-shadow: $shadow;
+        transition: $transition;
+
+      
 
       &::before{
         content: attr(data-step);
@@ -153,6 +172,10 @@ button {
         background-color: $primaire;
       }
 
+      &:hover{
+        background-color: rgb(247, 237, 255);
+      }
+
           & i{
             font-size: 19px;
           }
@@ -162,5 +185,107 @@ button {
             font-weight: 700;
           }
       }
+    &--step1{
+      margin-top: 0px;
+    }  
+  }
+}
+/*fin de la section2*/
+.section3{
+  background-color: $grisclair;
+  padding-top: 10%;
+
+  &__titre {
+    @extend .section2__titre;
+  }
+
+  &__cartes{ /*container de toutes les cartes*/
+    margin:0px auto;
+    width: 100%;
+    padding: 10% 0%;
+
+    &--carte{/*structure d'une carte*/
+      margin: 0 auto;
+      width: 90%;
+      max-width: 400px;
+      height: 280px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: $shadow;
+      margin-bottom: 5%;
+
+      &--cardimage{/*container de l'image*/
+        height: 200px;
+        overflow: hidden;
+        border-radius: 20px 20px 0px 0px;
+
+        &--img{/*image*/
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &--cardtext{/*container du texte*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0% 5%;
+        margin-top: 5%;
+
+        &--texte{/*div titre + localisation*/
+          background-color: white;
+
+          &--titre{
+            font-size: large;
+            font-weight: 700;
+            margin-bottom: 2%;
+          }
+          &--lieu{
+            font-weight: 300;
+          }
+        }
+      }
+      &--icone{
+        height: fit-content;
+
+        &--coeur{/*coeur*/
+          font-size: 24px;
+
+          &:target{
+            color: $primaire;
+          }
+        }
+      }
+    }
+  }
+}
+footer{
+  background-color: rgb(53, 53, 53);
+  color: white;
+  width: 100%;
+
+  a{/*liens du footer*/
+    color: white;
+  }
+}
+
+.textfooter{/*container du texte*/
+  padding: 5%;
+
+  &__titre{
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  &__cta{/*liens*/
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 10px;
+    &-1, &-2{
+      font-size: 12px;
+      margin-right: 10px;
+    }
   }
 }

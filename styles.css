@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -14,6 +18,7 @@ body {
   align-content: center;
   min-width: 320px;
   max-width: 450px;
+  /* à supprimer une fois la version mobile terminée*/
   background-color: white;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -21,6 +26,11 @@ body {
 
 main {
   width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 h1,
@@ -37,6 +47,7 @@ nav {
 }
 
 button {
+  /*reset du style des boutons*/
   all: initial;
   cursor: pointer;
 }
@@ -64,6 +75,7 @@ button {
 }
 
 .section1 {
+  /*début de la section1*/
   height: 350px;
   width: 100%;
   display: flex;
@@ -102,15 +114,20 @@ button {
   background: rgb(255, 121, 218);
   background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
   margin-bottom: 50px;
+  transition: ease 0.3s;
+}
+.section1__explorer:hover {
+  box-shadow: 0px 0px 5px #9356dc;
 }
 
+/*fin de la section1*/
 .section2 {
+  /*début de la section2*/
   /* a supprimer*/
-  margin-bottom: 100px;
+  padding: 10% 0%;
 }
-.section2__titre {
-  margin: 7%;
-  margin-top: 50px;
+.section2__titre, .section3__titre {
+  margin: 0% 7%;
   font-size: 25px;
   font-weight: 700;
 }
@@ -118,8 +135,7 @@ button {
   /*Container des div étapes*/
   display: flex;
   flex-direction: column;
-  margin: 0% 10%;
-  margin-top: 50px;
+  margin: 5% 10%;
 }
 .section2__steps--step1, .section2__steps--step2, .section2__steps--step3 {
   /*boites des étapes*/
@@ -130,6 +146,7 @@ button {
   border-radius: 20px;
   background-color: rgb(247, 247, 247);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: ease 0.3s;
 }
 .section2__steps--step1::before, .section2__steps--step2::before, .section2__steps--step3::before {
   content: attr(data-step);
@@ -144,12 +161,114 @@ button {
   border-radius: 15px;
   background-color: #9356dc;
 }
+.section2__steps--step1:hover, .section2__steps--step2:hover, .section2__steps--step3:hover {
+  background-color: rgb(247, 237, 255);
+}
 .section2__steps--step1 i, .section2__steps--step2 i, .section2__steps--step3 i {
   font-size: 19px;
 }
 .section2__steps--step1--text, .section2__steps--step2--text, .section2__steps--step3--text {
   margin: auto;
   font-weight: 700;
+}
+.section2__steps--step1 {
+  margin-top: 0px;
+}
+
+/*fin de la section2*/
+.section3 {
+  background-color: rgb(247, 247, 247);
+  padding-top: 10%;
+}
+.section3__cartes {
+  /*container de toutes les cartes*/
+  margin: 0px auto;
+  width: 100%;
+  padding: 10% 0%;
+}
+.section3__cartes--carte {
+  /*structure d'une carte*/
+  margin: 0 auto;
+  width: 90%;
+  max-width: 400px;
+  height: 280px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5%;
+}
+.section3__cartes--carte--cardimage {
+  /*container de l'image*/
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px 20px 0px 0px;
+}
+.section3__cartes--carte--cardimage--img {
+  /*image*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section3__cartes--carte--cardtext {
+  /*container du texte*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 5%;
+  margin-top: 5%;
+}
+.section3__cartes--carte--cardtext--texte {
+  /*div titre + localisation*/
+  background-color: white;
+}
+.section3__cartes--carte--cardtext--texte--titre {
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+.section3__cartes--carte--cardtext--texte--lieu {
+  font-weight: 300;
+}
+.section3__cartes--carte--icone {
+  height: fit-content;
+}
+.section3__cartes--carte--icone--coeur {
+  /*coeur*/
+  font-size: 24px;
+}
+.section3__cartes--carte--icone--coeur:target {
+  color: #9356dc;
+}
+
+footer {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  width: 100%;
+}
+footer a {
+  /*liens du footer*/
+  color: white;
+}
+
+.textfooter {
+  /*container du texte*/
+  padding: 5%;
+}
+.textfooter__titre {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.textfooter__cta {
+  /*liens*/
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+.textfooter__cta-1, .textfooter__cta-2 {
+  font-size: 12px;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
