@@ -30,10 +30,6 @@ body {
   box-sizing: border-box;
 }
 
-main{
-  width: 100%;
-}
-
 a{
   text-decoration: none;
   color: black;
@@ -195,6 +191,48 @@ button { /*reset du style des boutons*/
   background-color: $grisclair;
   padding-top: 10%;
 
+/*animation du coeur*/  
+  .fas{
+    opacity: 0;
+    transition-duration: 0.5s;
+    background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+  }
+
+  i{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input{
+    position: absolute;
+    opacity: 0;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .fa-heart{
+    font-size: 24px;
+  }
+
+input:checked ~ .far {
+  transition-duration: 0.5s;
+  opacity: 0;
+}
+
+input:checked ~ .fas{
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+/*Fin de l'animation du coeur*/
+
   &__titre {
     @extend .section2__titre;
   }
@@ -213,6 +251,12 @@ button { /*reset du style des boutons*/
       border-radius: 20px;
       box-shadow: $shadow;
       margin-bottom: 5%;
+
+      &--icone{/*container du coeur pour le positionnement correct*/ 
+          position: relative;
+          width: 24px;
+          height: 24px;
+      }
 
       &--cardimage{/*container de l'image*/
         height: 200px;
@@ -242,17 +286,6 @@ button { /*reset du style des boutons*/
           }
           &--lieu{
             font-weight: 300;
-          }
-        }
-      }
-      &--icone{
-        height: fit-content;
-
-        &--coeur{/*coeur*/
-          font-size: 24px;
-
-          &:target{
-            color: $primaire;
           }
         }
       }

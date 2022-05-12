@@ -24,10 +24,6 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  width: 100%;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -179,6 +175,41 @@ button {
 .section3 {
   background-color: rgb(247, 247, 247);
   padding-top: 10%;
+  /*animation du coeur*/
+  /*Fin de l'animation du coeur*/
+}
+.section3 .fas {
+  opacity: 0;
+  transition-duration: 0.5s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section3 i {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section3 input {
+  position: absolute;
+  opacity: 0;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+.section3 .fa-heart {
+  font-size: 24px;
+}
+.section3 input:checked ~ .far {
+  transition-duration: 0.5s;
+  opacity: 0;
+}
+.section3 input:checked ~ .fas {
+  transition-duration: 0.5s;
+  opacity: 1;
 }
 .section3__cartes {
   /*container de toutes les cartes*/
@@ -196,6 +227,12 @@ button {
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 5%;
+}
+.section3__cartes--carte--icone {
+  /*container du coeur pour le positionnement correct*/
+  position: relative;
+  width: 24px;
+  height: 24px;
 }
 .section3__cartes--carte--cardimage {
   /*container de l'image*/
@@ -228,16 +265,6 @@ button {
 }
 .section3__cartes--carte--cardtext--texte--lieu {
   font-weight: 300;
-}
-.section3__cartes--carte--icone {
-  height: fit-content;
-}
-.section3__cartes--carte--icone--coeur {
-  /*coeur*/
-  font-size: 24px;
-}
-.section3__cartes--carte--icone--coeur:target {
-  color: #9356dc;
 }
 
 footer {
