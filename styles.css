@@ -3,6 +3,12 @@
 @keyframes anim_loading {
   0% {
     transform: rotate(-45deg);
+    scale: 0.5;
+    opacity: 0;
+  }
+  5% {
+    scale: 1;
+    opacity: 1;
   }
   20% {
     transform: rotate(-45deg);
@@ -12,6 +18,8 @@
   }
   100% {
     transform: rotate(315deg);
+    scale: 0.5;
+    opacity: 0.5;
   }
 }
 @keyframes chargement {
@@ -36,7 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8705882353);
+  background-color: #ffffff;
   animation: chargement 0.2s ease-in-out;
   animation-delay: 1.6s;
   animation-fill-mode: both;
