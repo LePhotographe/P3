@@ -1,0 +1,41 @@
+@keyframes anim_loading
+{
+    0%
+    { 
+        transform: rotate(-45deg); 
+    }
+    20%
+    {
+        transform: rotate(-45deg);
+    }
+    80%
+    { 
+        transform: rotate(315deg);
+    }
+    100%
+    {
+        transform: rotate(315deg);
+    }
+}
+
+@keyframes chargement
+{
+    100%
+    {
+       opacity: 0;
+       z-index: -1;
+    }
+}
+
+@keyframes apparition
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+
+}

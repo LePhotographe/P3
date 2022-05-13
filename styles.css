@@ -1,5 +1,54 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+@keyframes anim_loading {
+  0% {
+    transform: rotate(-45deg);
+  }
+  20% {
+    transform: rotate(-45deg);
+  }
+  80% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(315deg);
+  }
+}
+@keyframes chargement {
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.chargement {
+  /*animation de temps de chargement*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8705882353);
+  animation: chargement 0.2s ease-in-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+  z-index: 2;
+}
+.chargement__loading {
+  width: 25%;
+  max-width: 100px;
+  animation: anim_loading 1s ease-in-out;
+  animation-iteration-count: 2;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -95,7 +144,7 @@ button {
   color: dimgray;
   font-size: large;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   padding: 0px 10px;
   margin-bottom: 20px;
 }
@@ -149,19 +198,24 @@ button {
   font-size: small;
   color: white;
   text-align: center;
-  line-height: 30px;
+  line-height: 25px;
   position: absolute;
   translate: -45px;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 15px;
   background-color: #9356dc;
 }
 .section2__steps--step1:hover, .section2__steps--step2:hover, .section2__steps--step3:hover {
   background-color: rgb(247, 237, 255);
 }
+.section2__steps--step1:hover > i, .section2__steps--step2:hover > i, .section2__steps--step3:hover > i {
+  color: #9356dc;
+}
 .section2__steps--step1 i, .section2__steps--step2 i, .section2__steps--step3 i {
   font-size: 19px;
+  color: rgb(126, 126, 126);
+  transition: ease 0.3s;
 }
 .section2__steps--step1--text, .section2__steps--step2--text, .section2__steps--step3--text {
   margin: auto;
@@ -204,11 +258,11 @@ button {
   font-size: 24px;
 }
 .section3 input:checked ~ .far {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   opacity: 0;
 }
 .section3 input:checked ~ .fas {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   opacity: 1;
 }
 .section3__cartes {
@@ -262,6 +316,10 @@ button {
   font-size: large;
   font-weight: 700;
   margin-bottom: 2%;
+  transition: ease 0.3s;
+}
+.section3__cartes--carte--cardtext--texte--titre:hover {
+  color: #9356dc;
 }
 .section3__cartes--carte--cardtext--texte--lieu {
   font-weight: 300;
@@ -275,6 +333,10 @@ footer {
 footer a {
   /*liens du footer*/
   color: white;
+  transition: ease 0.3s;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 
 .textfooter {

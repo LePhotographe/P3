@@ -1,11 +1,27 @@
+@import "variables.scss";
+@import "keyframes.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 
-$primaire: #9356dc;
-$secondaire: #ff79da;
-$tertiaire: #99e2d0;
-$grisclair: rgb(247, 247, 247);
-$shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.1);
-$transition: ease 0.3s;
+.chargement{/*animation de temps de chargement*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffde;
+  animation: chargement 0.2s ease-in-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+  z-index: 2;
+
+  &__loading{
+    width: 25%;
+    max-width: 100px;
+    animation: anim_loading 1s ease-in-out;
+    animation-iteration-count: 2;
+  }
+}
 
 html{
   scroll-behavior: smooth;
@@ -101,7 +117,7 @@ button { /*reset du style des boutons*/
     color: dimgray;
     font-size: large;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     padding: 0px 10px;
     margin-bottom: 20px;
   }
@@ -114,12 +130,13 @@ button { /*reset du style des boutons*/
     padding: 20px 30px;
     border-radius: 50px;
     background: rgb(255, 121, 218);
-    background: linear-gradient(175deg, $secondaire 0%, $primaire 100%);
+    background: $degrade;
     margin-bottom: 50px;
     transition: $transition;
 
     &:hover{
       box-shadow: 0px 0px 5px $primaire;
+
     }
   }
 }
@@ -152,18 +169,16 @@ button { /*reset du style des boutons*/
         box-shadow: $shadow;
         transition: $transition;
 
-      
-
       &::before{
         content: attr(data-step);
         font-size: small;
         color: white;
         text-align: center;
-        line-height: 30px;
+        line-height: 25px;
         position: absolute;
         translate: -45px;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         border-radius: 15px;
         background-color: $primaire;
       }
@@ -172,8 +187,14 @@ button { /*reset du style des boutons*/
         background-color: rgb(247, 237, 255);
       }
 
+      &:hover > i{
+        color: $primaire;
+      }
+
           & i{
             font-size: 19px;
+            color: rgb(126, 126, 126);
+            transition: $transition;
           }
 
           &--text{
@@ -223,12 +244,12 @@ button { /*reset du style des boutons*/
   }
 
 input:checked ~ .far {
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   opacity: 0;
 }
 
 input:checked ~ .fas{
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   opacity: 1;
 }
 /*Fin de l'animation du coeur*/
@@ -283,6 +304,11 @@ input:checked ~ .fas{
             font-size: large;
             font-weight: 700;
             margin-bottom: 2%;
+            transition: $transition;
+
+            &:hover{
+              color: $primaire;
+            }
           }
           &--lieu{
             font-weight: 300;
@@ -299,6 +325,11 @@ footer{
 
   a{/*liens du footer*/
     color: white;
+    transition: $transition;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
 
