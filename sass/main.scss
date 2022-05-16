@@ -130,15 +130,12 @@ button { /*reset du style des boutons*/
     color: $grisclair;
     padding: 20px 30px;
     border-radius: 50px;
-    background: rgb(255, 121, 218);
     background: $degrade;
     margin-bottom: 50px;
     transition: $transition;
 
     &:hover{
-      scale: 1.05;
-      box-shadow: $shadow;
-
+      background: $degradeclair;
     }
   }
 }
@@ -187,6 +184,7 @@ button { /*reset du style des boutons*/
 
       &:hover{
         background-color: rgb(247, 237, 255);
+        color: white;
       }
 
       &:hover > i{
@@ -269,6 +267,7 @@ button { /*reset du style des boutons*/
           top: 15px;
           right: 15px;
           padding: 7px 12px;
+          padding-bottom: 4px;
           border-radius: 2px;
           background-color: $tertiaire;
           color: darken($color: $tertiaire, $amount: 40%);
