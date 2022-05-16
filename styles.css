@@ -240,6 +240,7 @@ button {
   padding-top: 10%;
   /*animation du coeur*/
   /*Fin de l'animation du coeur*/
+  /*animation du coeur*/
 }
 .section3 .fas {
   opacity: 0;
@@ -390,6 +391,94 @@ footer a:hover {
 .textfooter__cta-1, .textfooter__cta-2 {
   font-size: 12px;
   margin-right: 10px;
+}
+
+/*Fin du CSS pour la page d'accueil*/
+/*Début du CSS pour les pages "restaurants"*/
+.restaurants__Logo {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.restaurants__Logo__fleche {
+  position: relative;
+  left: 150%;
+  font-size: x-large;
+}
+.restaurants__Logo__text {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0%;
+  margin: 0 auto;
+  font-size: xx-large;
+}
+
+.hero {
+  /*container de l'image hero*/
+  position: relative;
+  top: 10vh;
+  z-index: -1;
+}
+.hero__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.menu {
+  padding-top: 10px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: rgb(247, 247, 247);
+  width: 100%;
+  height: 800px;
+  /* à supprimer quand le contenu sera rempli*/
+}
+.menu__titre {
+  /*animation du coeur*/
+  /*Fin de l'animation du coeur*/
+  /*animation du coeur*/
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__titre .fas {
+  opacity: 0;
+  transition-duration: 0.5s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__titre i {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__titre input {
+  position: absolute;
+  opacity: 0;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+.menu__titre .fa-heart {
+  font-size: 24px;
+}
+.menu__titre input:checked ~ .far {
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+.menu__titre input:checked ~ .fas {
+  transition-duration: 0.3s;
+  opacity: 1;
+}
+.menu__titre--coeur {
+  margin: auto 0;
+  height: 24px;
+  width: 24px;
 }
 
 /*# sourceMappingURL=styles.css.map */

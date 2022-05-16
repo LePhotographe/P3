@@ -1,5 +1,6 @@
 @import "variables.scss";
 @import "keyframes.scss";
+@import "mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 
 .chargement{/*animation de temps de chargement*/
@@ -213,48 +214,7 @@ button { /*reset du style des boutons*/
   background-color: $grisclair;
   padding-top: 10%;
 
-/*animation du coeur*/  
-  .fas{
-    opacity: 0;
-    transition-duration: 0.5s;
-    background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-  }
-
-  i{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  input{
-    position: absolute;
-    opacity: 0;
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
-    z-index: 3;
-  }
-
-  .fa-heart{
-    font-size: 24px;
-  }
-
-input:checked ~ .far {
-  transition-duration: 0.3s;
-  opacity: 0;
-}
-
-input:checked ~ .fas{
-  transition-duration: 0.3s;
-  opacity: 1;
-}
-/*Fin de l'animation du coeur*/
-
+  @include coeur;/*animation du coeur*/
   &__titre {
     @extend .section2__titre;
   }
@@ -380,3 +340,62 @@ footer{
     }
   }
 }
+/*Fin du CSS pour la page d'accueil*/
+/*Début du CSS pour les pages "restaurants"*/
+
+.restaurants__Logo{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__fleche{
+    position: relative;
+    left: 150%;
+    font-size: x-large;
+  }
+
+  &__text{
+    display: flex;
+    justify-content: center;
+    padding: 5% 0%;
+    margin: 0 auto;
+    font-size: xx-large;
+    
+  }
+}
+
+.hero{/*container de l'image hero*/
+  position: relative;
+  top: 10vh;
+  z-index: -1;
+  
+  &__image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+
+.menu{
+  padding-top: 10px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: $grisclair;
+  width: 100%;
+  height: 800px;/* à supprimer quand le contenu sera rempli*/ 
+
+  &__titre{
+    @include coeur;/*animation du coeur*/
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+
+    &--coeur{
+      margin: auto 0;
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
