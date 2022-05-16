@@ -135,7 +135,8 @@ button { /*reset du style des boutons*/
     transition: $transition;
 
     &:hover{
-      box-shadow: 0px 0px 5px $primaire;
+      scale: 1.05;
+      box-shadow: $shadow;
 
     }
   }
@@ -272,6 +273,11 @@ input:checked ~ .fas{
       border-radius: 20px;
       box-shadow: $shadow;
       margin-bottom: 5%;
+      transition: $transition;
+
+      &:hover{
+        box-shadow: 0px 5px 12px rgba($color: $primaire, $alpha: 0.3);
+      }
 
       &--icone{/*container du coeur pour le positionnement correct*/ 
           position: relative;
@@ -284,12 +290,33 @@ input:checked ~ .fas{
         overflow: hidden;
         border-radius: 20px 20px 0px 0px;
 
-        &--img{/*image*/
+        &--img{/*image avec "nouveau"*/
           width: 100%;
-          height: 100%;
+          height: 110%;
+          object-fit: cover;
+          margin-top: -50px;
+        }
+
+        &--img--n{/*image SANS "nouveau"*/
+          width: 100%;
+          height: 110%;
           object-fit: cover;
         }
+
+        &--nouveau{
+          position: relative;
+          float: right;
+          top: 15px;
+          right: 15px;
+          padding: 7px 12px;
+          border-radius: 2px;
+          background-color: $tertiaire;
+          color: darken($color: $tertiaire, $amount: 40%);
+          font-size: 14px;
+          box-shadow: $shadow;
+        }
       }
+
       &--cardtext{/*container du texte*/
         display: flex;
         justify-content: space-between;

@@ -170,7 +170,8 @@ button {
   transition: ease 0.3s;
 }
 .section1__explorer:hover {
-  box-shadow: 0px 0px 5px #9356dc;
+  scale: 1.05;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /*fin de la section1*/
@@ -289,6 +290,10 @@ button {
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 5%;
+  transition: ease 0.3s;
+}
+.section3__cartes--carte:hover {
+  box-shadow: 0px 5px 12px rgba(147, 86, 220, 0.3);
 }
 .section3__cartes--carte--icone {
   /*container du coeur pour le positionnement correct*/
@@ -303,10 +308,29 @@ button {
   border-radius: 20px 20px 0px 0px;
 }
 .section3__cartes--carte--cardimage--img {
-  /*image*/
+  /*image avec "nouveau"*/
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
+  margin-top: -50px;
+}
+.section3__cartes--carte--cardimage--img--n {
+  /*image SANS "nouveau"*/
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+}
+.section3__cartes--carte--cardimage--nouveau {
+  position: relative;
+  float: right;
+  top: 15px;
+  right: 15px;
+  padding: 7px 12px;
+  border-radius: 2px;
+  background-color: #99e2d0;
+  color: #278870;
+  font-size: 14px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 .section3__cartes--carte--cardtext {
   /*container du texte*/
