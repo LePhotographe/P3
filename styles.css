@@ -215,7 +215,6 @@ button {
 }
 .section2__steps--step1:hover, .section2__steps--step2:hover, .section2__steps--step3:hover {
   background-color: rgb(247, 237, 255);
-  color: white;
 }
 .section2__steps--step1:hover > i, .section2__steps--step2:hover > i, .section2__steps--step3:hover > i {
   color: #9356dc;
