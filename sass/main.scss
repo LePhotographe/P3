@@ -392,6 +392,7 @@ footer{
 
   &__entree{
     margin-bottom: 10%;
+
     &--titre{
       margin-bottom: 3%;
     }
@@ -412,6 +413,7 @@ footer{
   border-radius: 20px;
   margin-bottom: 5%;
   box-shadow: $shadow;
+  animation: apparition 1s;
 
   &__texte{
 
@@ -445,4 +447,16 @@ footer{
     padding: 20px 50px;
     margin-bottom: 5%;
   }
+}
+
+#premiere{
+  animation: premiere 1s;
+}
+
+#deuxieme{
+  animation: deuxieme 0.9s;
+}
+
+#troisieme{
+  animation: troisieme 0.8s;
 }
