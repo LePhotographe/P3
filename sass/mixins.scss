@@ -41,3 +41,20 @@
   }
   /*Fin de l'animation du coeur*/
 }
+
+@mixin bouton {
+    /*Bouton*/
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    font-weight: 500;
+    color: $grisclair;
+    padding: 20px 30px;
+    border-radius: 50px;
+    background-image: $degrade;
+    margin-bottom: 50px;
+    transition: $transition;
+
+    &:hover{
+      background-image: $degradeclair;
+    }
+  }

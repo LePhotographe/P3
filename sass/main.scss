@@ -123,20 +123,8 @@ button { /*reset du style des boutons*/
     margin-bottom: 20px;
   }
 
-  &__explorer { /*Bouton*/
-    font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: 500;
-    color: $grisclair;
-    padding: 20px 30px;
-    border-radius: 50px;
-    background: $degrade;
-    margin-bottom: 50px;
-    transition: $transition;
-
-    &:hover{
-      background: $degradeclair;
-    }
+  &__explorer { 
+    @include bouton
   }
 }
 /*fin de la section1*/
@@ -339,6 +327,7 @@ footer{
   }
 }
 /*Fin du CSS pour la page d'accueil*/
+
 /*Début du CSS pour les pages "restaurants"*/
 
 .restaurants__Logo{
@@ -381,7 +370,6 @@ footer{
   border-radius: 25px 25px 0px 0px;
   background-color: $grisclair;
   width: 100%;
-  height: 800px;/* à supprimer quand le contenu sera rempli*/ 
 
   &__titre{
     @include coeur;/*animation du coeur*/
@@ -397,3 +385,64 @@ footer{
   }
 }
 
+.plats{
+  padding: 5%;
+  font-size: 18px;
+  background-color: $grisclair;
+
+  &__entree{
+    margin-bottom: 10%;
+    &--titre{
+      margin-bottom: 3%;
+    }
+    &--ligne{
+      height: 3px;
+      width: 50px;
+      background-color: $tertiaire;
+      margin-bottom: 5%;
+    }
+  }
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  box-shadow: $shadow;
+
+  &__texte{
+
+    &--plat{
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2%;
+    }
+
+    &--accompagnement{
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+
+  &__prix{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-weight: 700;
+  }
+}
+
+.plats__commander{
+  display: flex;
+  justify-content: center;
+  padding: 5% 0%;
+
+  &--bouton{
+    @include bouton;
+    padding: 20px 50px;
+    margin-bottom: 5%;
+  }
+}

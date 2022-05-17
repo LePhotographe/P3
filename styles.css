@@ -164,12 +164,12 @@ button {
   color: rgb(247, 247, 247);
   padding: 20px 30px;
   border-radius: 50px;
-  background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  background-image: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
   margin-bottom: 50px;
   transition: ease 0.3s;
 }
 .section1__explorer:hover {
-  background: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
+  background-image: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
 }
 
 /*fin de la section1*/
@@ -430,8 +430,6 @@ footer a:hover {
   border-radius: 25px 25px 0px 0px;
   background-color: rgb(247, 247, 247);
   width: 100%;
-  height: 800px;
-  /* à supprimer quand le contenu sera rempli*/
 }
 .menu__titre {
   /*animation du coeur*/
@@ -478,6 +476,72 @@ footer a:hover {
   margin: auto 0;
   height: 24px;
   width: 24px;
+}
+
+.plats {
+  padding: 5%;
+  font-size: 18px;
+  background-color: rgb(247, 247, 247);
+}
+.plats__entree {
+  margin-bottom: 10%;
+}
+.plats__entree--titre {
+  margin-bottom: 3%;
+}
+.plats__entree--ligne {
+  height: 3px;
+  width: 50px;
+  background-color: #99e2d0;
+  margin-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container__texte--plat {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+.container__texte--accompagnement {
+  font-size: 15px;
+  font-weight: 300;
+}
+.container__prix {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-weight: 700;
+}
+
+.plats__commander {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0%;
+}
+.plats__commander--bouton {
+  /*Bouton*/
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  font-weight: 500;
+  color: rgb(247, 247, 247);
+  padding: 20px 30px;
+  border-radius: 50px;
+  background-image: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  margin-bottom: 50px;
+  transition: ease 0.3s;
+  padding: 20px 50px;
+  margin-bottom: 5%;
+}
+.plats__commander--bouton:hover {
+  background-image: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
 }
 
 /*# sourceMappingURL=styles.css.map */
