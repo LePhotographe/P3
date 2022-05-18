@@ -541,12 +541,15 @@ footer a:hover {
   overflow: hidden;
   flex-wrap: nowrap;
 }
+.container:hover {
+  cursor: pointer;
+}
 .container:hover .icone {
   margin-right: 0px;
   transition-duration: 0.5s;
 }
 .container:hover i {
-  transform: rotate(360deg);
+  transform: rotate(720deg);
   transition-duration: 0.5s;
 }
 .container__description {
@@ -586,7 +589,7 @@ footer a:hover {
   flex-direction: column;
   justify-content: end;
   font-weight: 700;
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 .plats__commander {
