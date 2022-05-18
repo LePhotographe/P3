@@ -408,32 +408,68 @@ footer{
 .container{
   display: flex;
   justify-content: space-between;
-  padding: 5%;
+  height: 80px;
   background-color: white;
   border-radius: 20px;
   margin-bottom: 5%;
   box-shadow: $shadow;
   animation: apparition 1s;
+  overflow: hidden;
+  flex-wrap: nowrap;
 
-  &__texte{
+  &:hover .icone{
+    margin-right: 0px;
+    transition-duration: 0.5s;
+  }
+
+  &:hover i{
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+  }
+
+  &__description{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 5%;
+
+
+  &--texte{
+    max-width: 100%;
 
     &--plat{
+      max-width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 18px;
       font-weight: 700;
+      height: 22px;
       margin-bottom: 2%;
     }
 
     &--accompagnement{
+      max-width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 20px;
       font-size: 15px;
       font-weight: 300;
     }
   }
+}
 
   &__prix{
+    float: right;
     display: flex;
     flex-direction: column;
     justify-content: end;
     font-weight: 700;
+    margin-left: 10px;
   }
 }
 
@@ -447,6 +483,28 @@ footer{
     padding: 20px 50px;
     margin-bottom: 5%;
   }
+}
+
+.icone{
+  background-color: $tertiaire;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  margin-right: -105px;
+  transition: $transition;
+
+  &__check{
+    color: $tertiaire;
+    background-color: white;
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
 }
 
 #premiere{
