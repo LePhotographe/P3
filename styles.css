@@ -541,9 +541,6 @@ footer a:hover {
   overflow: hidden;
   flex-wrap: nowrap;
 }
-.container:hover {
-  cursor: pointer;
-}
 .container:hover .icone {
   margin-right: 0px;
   transition-duration: 0.5s;

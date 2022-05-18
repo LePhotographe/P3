@@ -417,10 +417,6 @@ footer{
   overflow: hidden;
   flex-wrap: nowrap;
 
-  &:hover{
-    cursor: pointer;
-  }
-
   &:hover .icone{
     margin-right: 0px;
     transition-duration: 0.5s;
