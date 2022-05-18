@@ -3,11 +3,12 @@
 @import "mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 
-.chargement{/*animation de temps de chargement*/
+.chargement {
+  /*animation de temps de chargement*/
   position: fixed;
   width: 100%;
   height: 100%;
-  display:  flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
@@ -16,7 +17,7 @@
   animation-fill-mode: both;
   z-index: 2;
 
-  &__loading{
+  &__loading {
     width: 25%;
     max-width: 100px;
     animation: anim_loading 1s ease-in-out;
@@ -24,7 +25,7 @@
   }
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -47,7 +48,7 @@ body {
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
@@ -65,7 +66,8 @@ nav {
   width: 100%;
 }
 
-button { /*reset du style des boutons*/
+button {
+  /*reset du style des boutons*/
   all: initial;
   cursor: pointer;
 }
@@ -94,7 +96,8 @@ button { /*reset du style des boutons*/
   }
 }
 
-.section1 { /*début de la section1*/
+.section1 {
+  /*début de la section1*/
   height: 350px;
   width: 100%;
   display: flex;
@@ -124,13 +127,14 @@ button { /*reset du style des boutons*/
     margin-bottom: 20px;
   }
 
-  &__explorer { 
-    @include bouton
+  &__explorer {
+    @include bouton;
   }
 }
 /*fin de la section1*/
 
-.section2 {/*début de la section2*/
+.section2 {
+  /*début de la section2*/
 
   /* a supprimer*/
   padding: 10% 0%;
@@ -140,24 +144,26 @@ button { /*reset du style des boutons*/
     font-size: 25px;
     font-weight: 700;
   }
-  &__steps{ /*Container des div étapes*/
+  &__steps {
+    /*Container des div étapes*/
     display: flex;
     flex-direction: column;
     margin: 5% 10%;
 
-      &--step1, 
-      &--step2, 
-      &--step3{ /*boites des étapes*/
-        display: flex;
-        align-items: center;
-        padding: 30px;
-        margin: 15px 0px;
-        border-radius: 20px;
-        background-color: $grisclair;
-        box-shadow: $shadow;
-        transition: $transition;
+    &--step1,
+    &--step2,
+    &--step3 {
+      /*boites des étapes*/
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      margin: 15px 0px;
+      border-radius: 20px;
+      background-color: $grisclair;
+      box-shadow: $shadow;
+      transition: $transition;
 
-      &::before{
+      &::before {
         content: attr(data-step);
         font-size: small;
         color: white;
@@ -171,46 +177,48 @@ button { /*reset du style des boutons*/
         background-color: $primaire;
       }
 
-      &:hover{
+      &:hover {
         background-color: rgb(247, 237, 255);
       }
 
-      &:hover > i{
+      &:hover > i {
         color: $primaire;
       }
 
-          & i{
-            font-size: 19px;
-            color: rgb(126, 126, 126);
-            transition: $transition;
-          }
-
-          &--text{
-            margin: auto;
-            font-weight: 700;
-          }
+      & i {
+        font-size: 19px;
+        color: rgb(126, 126, 126);
+        transition: $transition;
       }
-    &--step1{
+
+      &--text {
+        margin: auto;
+        font-weight: 700;
+      }
+    }
+    &--step1 {
       margin-top: 0px;
-    }  
+    }
   }
 }
 /*fin de la section2*/
-.section3{
+.section3 {
   background-color: $grisclair;
   padding-top: 10%;
 
-  @include coeur;/*animation du coeur*/
+  @include coeur; /*animation du coeur*/
   &__titre {
     @extend .section2__titre;
   }
 
-  &__cartes{ /*container de toutes les cartes*/
-    margin:0px auto;
+  &__cartes {
+    /*container de toutes les cartes*/
+    margin: 0px auto;
     width: 100%;
     padding: 10% 0%;
 
-    &--carte{/*structure d'une carte*/
+    &--carte {
+      /*structure d'une carte*/
       margin: 0 auto;
       width: 90%;
       max-width: 400px;
@@ -221,35 +229,39 @@ button { /*reset du style des boutons*/
       margin-bottom: 5%;
       transition: $transition;
 
-      &:hover{
+      &:hover {
         box-shadow: 0px 5px 12px rgba($color: $primaire, $alpha: 0.3);
       }
 
-      &--icone{/*container du coeur pour le positionnement correct*/ 
-          position: relative;
-          width: 24px;
-          height: 24px;
+      &--icone {
+        /*container du coeur pour le positionnement correct*/
+        position: relative;
+        width: 24px;
+        height: 24px;
       }
 
-      &--cardimage{/*container de l'image*/
+      &--cardimage {
+        /*container de l'image*/
         height: 200px;
         overflow: hidden;
         border-radius: 20px 20px 0px 0px;
 
-        &--img{/*image avec "nouveau"*/
+        &--img {
+          /*image avec "nouveau"*/
           width: 100%;
           height: 110%;
           object-fit: cover;
           margin-top: -50px;
         }
 
-        &--img--n{/*image SANS "nouveau"*/
+        &--img--n {
+          /*image SANS "nouveau"*/
           width: 100%;
           height: 110%;
           object-fit: cover;
         }
 
-        &--nouveau{
+        &--nouveau {
           position: relative;
           float: right;
           top: 15px;
@@ -264,27 +276,29 @@ button { /*reset du style des boutons*/
         }
       }
 
-      &--cardtext{/*container du texte*/
+      &--cardtext {
+        /*container du texte*/
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0% 5%;
         margin-top: 5%;
 
-        &--texte{/*div titre + localisation*/
+        &--texte {
+          /*div titre + localisation*/
           background-color: white;
 
-          &--titre{
+          &--titre {
             font-size: large;
             font-weight: 700;
             margin-bottom: 2%;
             transition: $transition;
 
-            &:hover{
+            &:hover {
               color: $primaire;
             }
           }
-          &--lieu{
+          &--lieu {
             font-weight: 300;
           }
         }
@@ -292,36 +306,40 @@ button { /*reset du style des boutons*/
     }
   }
 }
-footer{
+footer {
   background-color: rgb(53, 53, 53);
   color: white;
   width: 100%;
 
-  a{/*liens du footer*/
+  a {
+    /*liens du footer*/
     color: white;
     transition: $transition;
 
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
 }
 
-.textfooter{/*container du texte*/
+.textfooter {
+  /*container du texte*/
   padding: 5%;
 
-  &__titre{
+  &__titre {
     font-size: 18px;
     font-weight: 300;
     margin-bottom: 20px;
   }
 
-  &__cta{/*liens*/
+  &__cta {
+    /*liens*/
     display: flex;
     align-items: center;
     width: fit-content;
     margin-bottom: 10px;
-    &-1, &-2{
+    &-1,
+    &-2 {
       font-size: 12px;
       margin-right: 10px;
     }
@@ -331,54 +349,53 @@ footer{
 /*===============================================================================================================================*/
 /*Début du CSS pour les pages "restaurants"*/
 
-.restaurants__Logo{
+.restaurants__Logo {
   position: absolute;
   width: 100%;
   display: flex;
   align-items: center;
 
-  &__fleche{
+  &__fleche {
     position: relative;
     left: 20px;
     font-size: x-large;
   }
 
-  &__text{
+  &__text {
     display: flex;
     justify-content: center;
     padding: 30px 0px;
     margin: 0 auto;
     font-size: xx-large;
-    
   }
 }
 
-.hero{/*container de l'image hero*/
+.hero {
+  /*container de l'image hero*/
   position: relative;
   top: 100px;
   z-index: -1;
-  
-  &__image{
+
+  &__image {
     width: 100%;
     height: 300px;
     object-fit: cover;
   }
 }
 
-
-.menu{
+.menu {
   padding-top: 10px;
   border-radius: 25px 25px 0px 0px;
   background-color: $grisclair;
   width: 100%;
 
-  &__titre{
-    @include coeur;/*animation du coeur*/
+  &__titre {
+    @include coeur; /*animation du coeur*/
     padding: 5%;
     display: flex;
     justify-content: space-between;
 
-    &--coeur{
+    &--coeur {
       margin: auto 0;
       height: 24px;
       width: 24px;
@@ -386,18 +403,18 @@ footer{
   }
 }
 
-.plats{
+.plats {
   padding: 5%;
   font-size: 18px;
   background-color: $grisclair;
 
-  &__entree{
+  &__entree {
     margin-bottom: 10%;
 
-    &--titre{
+    &--titre {
       margin-bottom: 3%;
     }
-    &--ligne{
+    &--ligne {
       height: 3px;
       width: 50px;
       background-color: $tertiaire;
@@ -406,7 +423,7 @@ footer{
   }
 }
 
-.container{
+.container {
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -418,53 +435,52 @@ footer{
   overflow: hidden;
   flex-wrap: nowrap;
 
-  &:hover .icone{
+  &:hover .icone {
     margin-right: 0px;
     transition-duration: 0.5s;
   }
 
-  &:hover i{
+  &:hover i {
     transform: rotate(720deg);
     transition-duration: 0.5s;
   }
 
-  &__description{
+  &__description {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: 5%;
 
-
-  &--texte{
-    max-width: 100%;
-
-    &--plat{
+    &--texte {
       max-width: 100%;
-      display: flex;
-      flex-wrap: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      font-size: 18px;
-      font-weight: 700;
-      height: 22px;
-      margin-bottom: 2%;
-    }
 
-    &--accompagnement{
-      max-width: 100%;
-      display: flex;
-      flex-wrap: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      height: 20px;
-      font-size: 15px;
-      font-weight: 300;
+      &--plat {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: 700;
+        height: 22px;
+        margin-bottom: 2%;
+      }
+
+      &--accompagnement {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 20px;
+        font-size: 15px;
+        font-weight: 300;
+      }
     }
   }
-}
 
-  &__prix{
+  &__prix {
     float: right;
     display: flex;
     flex-direction: column;
@@ -474,19 +490,19 @@ footer{
   }
 }
 
-.plats__commander{
+.plats__commander {
   display: flex;
   justify-content: center;
   padding: 5% 0%;
 
-  &--bouton{
+  &--bouton {
     @include bouton;
     padding: 20px 50px;
     margin-bottom: 5%;
   }
 }
 
-.icone{
+.icone {
   background-color: $tertiaire;
   display: flex;
   justify-content: center;
@@ -495,7 +511,7 @@ footer{
   margin-right: -105px;
   transition: $transition;
 
-  &__check{
+  &__check {
     color: $tertiaire;
     background-color: white;
     font-size: 12px;
@@ -505,17 +521,16 @@ footer{
     text-align: center;
     border-radius: 50%;
   }
-
 }
 
-#premiere{
+#premiere {
   animation: premiere 1s;
 }
 
-#deuxieme{
+#deuxieme {
   animation: deuxieme 0.9s;
 }
 
-#troisieme{
+#troisieme {
   animation: troisieme 0.8s;
 }

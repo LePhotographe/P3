@@ -212,7 +212,8 @@ button {
   /* a supprimer*/
   padding: 10% 0%;
 }
-.section2__titre, .section3__titre {
+.section2__titre,
+.section3__titre {
   margin: 0% 7%;
   font-size: 25px;
   font-weight: 700;
@@ -223,7 +224,9 @@ button {
   flex-direction: column;
   margin: 5% 10%;
 }
-.section2__steps--step1, .section2__steps--step2, .section2__steps--step3 {
+.section2__steps--step1,
+.section2__steps--step2,
+.section2__steps--step3 {
   /*boites des étapes*/
   display: flex;
   align-items: center;
@@ -234,7 +237,9 @@ button {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   transition: ease 0.3s;
 }
-.section2__steps--step1::before, .section2__steps--step2::before, .section2__steps--step3::before {
+.section2__steps--step1::before,
+.section2__steps--step2::before,
+.section2__steps--step3::before {
   content: attr(data-step);
   font-size: small;
   color: white;
@@ -247,18 +252,26 @@ button {
   border-radius: 15px;
   background-color: #9356dc;
 }
-.section2__steps--step1:hover, .section2__steps--step2:hover, .section2__steps--step3:hover {
+.section2__steps--step1:hover,
+.section2__steps--step2:hover,
+.section2__steps--step3:hover {
   background-color: rgb(247, 237, 255);
 }
-.section2__steps--step1:hover > i, .section2__steps--step2:hover > i, .section2__steps--step3:hover > i {
+.section2__steps--step1:hover > i,
+.section2__steps--step2:hover > i,
+.section2__steps--step3:hover > i {
   color: #9356dc;
 }
-.section2__steps--step1 i, .section2__steps--step2 i, .section2__steps--step3 i {
+.section2__steps--step1 i,
+.section2__steps--step2 i,
+.section2__steps--step3 i {
   font-size: 19px;
   color: rgb(126, 126, 126);
   transition: ease 0.3s;
 }
-.section2__steps--step1--text, .section2__steps--step2--text, .section2__steps--step3--text {
+.section2__steps--step1--text,
+.section2__steps--step2--text,
+.section2__steps--step3--text {
   margin: auto;
   font-weight: 700;
 }
@@ -277,7 +290,13 @@ button {
 .section3 .fas {
   opacity: 0;
   transition-duration: 0.5s;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#9356dc),
+    to(#ff79da)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -421,7 +440,8 @@ footer a:hover {
   width: fit-content;
   margin-bottom: 10px;
 }
-.textfooter__cta-1, .textfooter__cta-2 {
+.textfooter__cta-1,
+.textfooter__cta-2 {
   font-size: 12px;
   margin-right: 10px;
 }
@@ -477,7 +497,13 @@ footer a:hover {
 .menu__titre .fas {
   opacity: 0;
   transition-duration: 0.5s;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#9356dc),
+    to(#ff79da)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
