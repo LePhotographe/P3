@@ -73,9 +73,10 @@ button { /*reset du style des boutons*/
 .logo {
   position: sticky;
   width: 100%;
+  height: 80px;
   display: flex;
   justify-content: center;
-  padding: 5% 0%;
+  align-items: center;
   font-size: xx-large;
   box-shadow: $shadow;
   z-index: 1;
@@ -327,7 +328,7 @@ footer{
   }
 }
 /*Fin du CSS pour la page d'accueil*/
-
+/*===============================================================================================================================*/
 /*Début du CSS pour les pages "restaurants"*/
 
 .restaurants__Logo{
@@ -338,14 +339,14 @@ footer{
 
   &__fleche{
     position: relative;
-    left: 100%;
+    left: 20px;
     font-size: x-large;
   }
 
   &__text{
     display: flex;
     justify-content: center;
-    padding: 5% 0%;
+    padding: 30px 0px;
     margin: 0 auto;
     font-size: xx-large;
     
@@ -354,7 +355,7 @@ footer{
 
 .hero{/*container de l'image hero*/
   position: relative;
-  top: 10vh;
+  top: 100px;
   z-index: -1;
   
   &__image{
