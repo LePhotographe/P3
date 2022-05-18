@@ -566,8 +566,8 @@ footer a:hover {
   max-width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  overflow: hidden;
   font-size: 18px;
   font-weight: 700;
   height: 22px;
@@ -577,8 +577,8 @@ footer a:hover {
   max-width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  overflow: hidden;
   height: 20px;
   font-size: 15px;
   font-weight: 300;
