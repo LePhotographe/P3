@@ -522,7 +522,7 @@ footer a:hover {
   background-color: rgb(247, 247, 247);
 }
 .plats__entree {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 .plats__entree--titre {
   margin-bottom: 3%;
@@ -550,25 +550,21 @@ footer a:hover {
   overflow: hidden;
   max-width: 100%;
 }
-
 .carte:hover .carte__description__icone {
   margin-right: 0;
   transition-duration: 0.5s;
   transition-timing-function: ease;
 }
-
 .carte:hover i {
   transform: rotate(360deg);
   transition-duration: 0.5s;
 }
-
 .carte__description {
   width: 100%;
   display: flex;
   max-width: 100%;
   overflow: hidden;
 }
-
 .carte__description__texte {
   width: 100%;
   height: 100%;
@@ -579,15 +575,23 @@ footer a:hover {
   max-width: 100%;
   overflow: hidden;
 }
-
+.carte__description__texte--appellation {
+  font-size: 20px;
+  font-weight: 700;
+}
+.carte__description__texte--accompagnement {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 300;
+}
 .carte__description__prix {
   display: flex;
   align-items: flex-end;
   margin-bottom: 24px;
   margin-right: 16px;
   max-width: 100%;
+  font-weight: 700;
 }
-
 .carte__description__icone {
   width: 100px;
   background: #99e2d0;
