@@ -434,30 +434,30 @@ footer {
   margin: auto;
   position: relative;
 }
-.container {
+.carte {
   box-shadow: $shadow;
   border-radius: 10px;
-  height: 75px;
+  height: 90px;
   display: flex;
   overflow: hidden;
   max-width: 100%;
 }
-.container:hover .icone {
+.carte:hover .carte__description__icone {
   margin-right: 0;
   transition-duration: 0.5s;
   transition-timing-function: ease;
 }
-.container:hover i {
+.carte:hover i {
   transform: rotate(360deg);
   transition-duration: 0.5s;
 }
-.description {
+.carte__description {
   width: 100%;
   display: flex;
   max-width: 100%;
   overflow: hidden;
 }
-.texte {
+.carte__description__texte {
   width: 100%;
   height: 100%;
   display: flex;
@@ -467,14 +467,14 @@ footer {
   max-width: 100%;
   overflow: hidden;
 }
-.prix {
+.carte__description__prix {
   display: flex;
   align-items: flex-end;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+  margin-bottom: 24px;
+  margin-right: 16px;
   max-width: 100%;
 }
-.icone {
+.carte__description__icone {
   width: 100px;
   background: $tertiaire;
   display: flex;
@@ -484,7 +484,7 @@ footer {
   transition-duration: 0.5s;
   transition-timing-function: ease;
 }
-.icone > i {
+.carte__description__icone > i {
   color: $tertiaire;
   padding: 0.5rem;
   border-radius: 50%;
@@ -492,14 +492,14 @@ footer {
   transition-duration: 0.5s;
 }
 
-.texte > * {
+.carte__description__texte > * {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 100%;
 }
 
-.prix {
+.carte__description__prix {
   margin-left: 0.5rem;
 }
 
@@ -508,12 +508,12 @@ footer {
 .plats__commander {
   display: flex;
   justify-content: center;
-  padding: 5% 0%;
+  padding: 50px 0px 0px 0px;
 
   &--bouton {
     @include bouton;
     padding: 20px 50px;
-    margin-bottom: 5%;
+    margin-bottom: 0px;
   }
 }
 
