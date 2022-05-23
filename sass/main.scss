@@ -434,9 +434,10 @@ footer {
   margin: auto;
   position: relative;
 }
+
 .carte {
   box-shadow: $shadow;
-  border-radius: 10px;
+  border-radius: 20px;
   height: 90px;
   display: flex;
   overflow: hidden;
@@ -486,7 +487,8 @@ footer {
 }
 .carte__description__icone > i {
   color: $tertiaire;
-  padding: 0.5rem;
+  font-size: 16px;
+  padding: 8px;
   border-radius: 50%;
   background: white;
   transition-duration: 0.5s;
