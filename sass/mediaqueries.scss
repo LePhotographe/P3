@@ -1,0 +1,78 @@
+@import "variables.scss";
+
+@media (min-width: 834px) {
+  .localisation {
+    padding: 3% 0%;
+  }
+  .section2 {
+    max-width: 1080px;
+    margin: 0 auto;
+    &__titre {
+      text-align: center;
+    }
+  }
+
+  .section2__steps {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 3%;
+    &--step1 {
+      margin: 15px;
+    }
+    &--step1--text,
+    &--step2--text,
+    &--step3--text {
+      padding: 0px 10px;
+    }
+  }
+
+  .section3 {
+    padding-top: 25px;
+
+    &__titre {
+      text-align: center;
+    }
+  }
+
+  .section3__cartes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1080px;
+    padding: 3%;
+
+    &--carte {
+      max-width: 45%;
+    }
+  }
+
+  .textfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__titre {
+      margin: 0px;
+    }
+    &__cta {
+      margin-bottom: 0px;
+    }
+  }
+  /*------------------------Fin de la home------------------------*/
+  .restaurants__Logo__fleche {
+    left: 35px;
+  }
+  .plats__entree {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .carte {
+    width: 48%;
+  }
+}

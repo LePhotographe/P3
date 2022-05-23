@@ -140,11 +140,9 @@ main {
 .section2 {
   /*début de la section2*/
 
-  /* a supprimer*/
-  padding: 10% 0%;
-
   &__titre {
     margin: 0% 7%;
+    margin-top: 25px;
     font-size: 25px;
     font-weight: 700;
   }
@@ -152,7 +150,7 @@ main {
     /*Container des div étapes*/
     display: flex;
     flex-direction: column;
-    margin: 5% 10%;
+    margin: 20px;
 
     &--step1,
     &--step2,
@@ -161,7 +159,7 @@ main {
       display: flex;
       align-items: center;
       padding: 30px;
-      margin: 15px 0px;
+      margin: 15px;
       border-radius: 20px;
       background-color: $grisclair;
       box-shadow: $shadow;
@@ -225,7 +223,7 @@ main {
       /*structure d'une carte*/
       margin: 0 auto;
       width: 90%;
-      max-width: 400px;
+      max-width: 450px;
       height: 280px;
       background-color: white;
       border-radius: 20px;
@@ -368,8 +366,8 @@ footer {
   &__text {
     display: flex;
     justify-content: center;
+    width: 100%;
     padding: 30px 0px;
-    margin: 0 auto;
     font-size: xx-large;
   }
 }
@@ -436,6 +434,7 @@ footer {
 }
 
 .carte {
+  background-color: white;
   box-shadow: $shadow;
   border-radius: 20px;
   height: 90px;
@@ -552,3 +551,5 @@ footer {
 }
 
 /*Fin du CSS pour les pages "restaurants"*/
+
+@import "mediaqueries.scss";
