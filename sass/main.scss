@@ -442,6 +442,7 @@ footer {
   display: flex;
   overflow: hidden;
   max-width: 100%;
+  margin-bottom: 20px;
 
   &:hover .carte__description__icone {
     margin-right: 0;
@@ -471,7 +472,7 @@ footer {
       overflow: hidden;
 
       &--appellation {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
       }
 
@@ -529,7 +530,7 @@ footer {
 .plats__commander {
   display: flex;
   justify-content: center;
-  padding: 50px 0px 0px 0px;
+  padding: 50px 0px;
 
   &--bouton {
     @include bouton;
