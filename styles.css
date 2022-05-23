@@ -278,7 +278,7 @@ main {
 }
 .section3 .fas {
   opacity: 0;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   -webkit-background-clip: text;
   background-clip: text;
@@ -478,7 +478,7 @@ footer a:hover {
 }
 .menu__titre .fas {
   opacity: 0;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
   background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   -webkit-background-clip: text;
   background-clip: text;
@@ -559,6 +559,7 @@ footer a:hover {
 .carte:hover i {
   transform: rotate(360deg);
   transition-duration: 0.5s;
+  transition-delay: 0.1s;
 }
 .carte__description {
   width: 100%;
@@ -662,6 +663,10 @@ footer a:hover {
 
 /*Fin du CSS pour les pages "restaurants"*/
 @media (min-width: 834px) {
+  .hero__image {
+    height: 500px;
+  }
+
   .localisation {
     padding: 3% 0%;
   }

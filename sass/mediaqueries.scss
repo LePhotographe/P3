@@ -1,6 +1,9 @@
 @import "variables.scss";
 
 @media (min-width: 834px) {
+  .hero__image {
+    height: 500px;
+  }
   .localisation {
     padding: 3% 0%;
   }
