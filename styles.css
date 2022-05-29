@@ -1,4 +1,101 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+@keyframes anim_loading {
+  0% {
+    transform: rotate(-45deg);
+    scale: 0.5;
+    opacity: 0;
+  }
+  5% {
+    scale: 1;
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(-45deg);
+  }
+  80% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(315deg);
+    scale: 0.5;
+    opacity: 0.5;
+  }
+}
+@keyframes chargement {
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes premiere {
+  0% {
+    opacity: 0;
+    translate: -200px;
+  }
+  50% {
+    translate: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes deuxieme {
+  0% {
+    opacity: 0;
+    translate: -400px;
+  }
+  75% {
+    translate: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes troisieme {
+  0% {
+    opacity: 0;
+    translate: -600px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.chargement {
+  /*animation de temps de chargement*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  animation: chargement 0.2s ease-in-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+  z-index: 2;
+}
+.chargement__loading {
+  width: 25%;
+  max-width: 100px;
+  animation: anim_loading 1s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -12,10 +109,15 @@ body {
   align-items: center;
   align-content: center;
   min-width: 320px;
-  max-width: 450px;
+  /* à supprimer une fois la version mobile terminée*/
   background-color: white;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 h1,
@@ -32,15 +134,25 @@ nav {
 }
 
 button {
+  /*reset du style des boutons*/
   all: initial;
   cursor: pointer;
 }
 
+main {
+  width: 100%;
+}
+
 .logo {
+  position: sticky;
+  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: center;
-  margin: 5% 0%;
+  align-items: center;
   font-size: xx-large;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .localisation {
@@ -48,13 +160,14 @@ button {
   justify-content: center;
   padding: 5% 0%;
   background-color: rgb(224, 224, 224);
-  font-size: 20px;
+  font-size: 15px;
 }
 .localisation__marker {
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .section1 {
+  /*début de la section1*/
   height: 350px;
   width: 100%;
   display: flex;
@@ -67,34 +180,664 @@ button {
   background-color: rgb(247, 247, 247);
 }
 .section1__accroche {
+  width: 65%;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   padding: 0% 10%;
 }
 .section1__description {
+  width: 90%;
   color: dimgray;
   font-size: large;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   padding: 0px 10px;
+  margin-bottom: 20px;
 }
 .section1__explorer {
+  /*Bouton*/
   font-family: "Roboto", sans-serif;
   font-size: large;
-  font-weight: 700;
+  font-weight: 500;
   color: rgb(247, 247, 247);
   padding: 20px 30px;
   border-radius: 50px;
-  background: rgb(255, 121, 218);
-  background: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  background-image: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
   margin-bottom: 50px;
+  transition: ease 0.3s;
 }
-.section2__titre {
-  margin-top: 50px;
-  font-size: 30px;
+.section1__explorer:hover {
+  background-image: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
+}
+
+/*fin de la section1*/
+.section2 {
+  /*début de la section2*/
+}
+.section2__titre, .section3__titre {
+  margin: 0% 7%;
+  margin-top: 25px;
+  font-size: 25px;
   font-weight: 700;
-  padding: 0% 10%;
+}
+.section2__steps {
+  /*Container des div étapes*/
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.section2__steps--step1, .section2__steps--step2, .section2__steps--step3 {
+  /*boites des étapes*/
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  margin: 15px;
+  border-radius: 20px;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: ease 0.3s;
+}
+.section2__steps--step1::before, .section2__steps--step2::before, .section2__steps--step3::before {
+  content: attr(data-step);
+  font-size: small;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  position: absolute;
+  translate: -45px;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: #9356dc;
+}
+.section2__steps--step1:hover, .section2__steps--step2:hover, .section2__steps--step3:hover {
+  background-color: rgb(247, 237, 255);
+}
+.section2__steps--step1:hover > i, .section2__steps--step2:hover > i, .section2__steps--step3:hover > i {
+  color: #9356dc;
+}
+.section2__steps--step1 i, .section2__steps--step2 i, .section2__steps--step3 i {
+  font-size: 19px;
+  color: rgb(126, 126, 126);
+  transition: ease 0.3s;
+}
+.section2__steps--step1--text, .section2__steps--step2--text, .section2__steps--step3--text {
+  margin: auto;
+  font-weight: 700;
+}
+.section2__steps--step1 {
+  margin-top: 0px;
+}
+
+/*fin de la section2*/
+.section3 {
+  background-color: rgb(247, 247, 247);
+  padding-top: 10%;
+  /*animation du coeur*/
+  /*Fin de l'animation du coeur*/
+  /*animation du coeur*/
+}
+.section3 .fas {
+  opacity: 0;
+  transition-duration: 0.3s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section3 i {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section3 input {
+  position: absolute;
+  opacity: 0;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+.section3 .fa-heart {
+  font-size: 24px;
+}
+.section3 input:checked ~ .far {
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+.section3 input:checked ~ .fas {
+  transition-duration: 0.3s;
+  opacity: 1;
+}
+.section3__cartes {
+  /*container de toutes les cartes*/
+  margin: 0px auto;
+  width: 100%;
+  padding: 10% 0%;
+}
+.section3__cartes--carte {
+  /*structure d'une carte*/
+  margin: 0 auto;
+  width: 90%;
+  max-width: 450px;
+  height: 280px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5%;
+  transition: ease 0.3s;
+}
+.section3__cartes--carte:hover {
+  box-shadow: 0px 5px 12px rgba(147, 86, 220, 0.3);
+}
+.section3__cartes--carte--icone {
+  /*container du coeur pour le positionnement correct*/
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.section3__cartes--carte--cardimage {
+  /*container de l'image*/
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px 20px 0px 0px;
+}
+.section3__cartes--carte--cardimage--img {
+  /*image avec "nouveau"*/
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  margin-top: -50px;
+}
+.section3__cartes--carte--cardimage--img--n {
+  /*image SANS "nouveau"*/
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+}
+.section3__cartes--carte--cardimage--nouveau {
+  position: relative;
+  float: right;
+  top: 15px;
+  right: 15px;
+  padding: 7px 12px;
+  padding-bottom: 4px;
+  border-radius: 2px;
+  background-color: #99e2d0;
+  color: #278870;
+  font-size: 14px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.section3__cartes--carte--cardtext {
+  /*container du texte*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 5%;
+  margin-top: 5%;
+}
+.section3__cartes--carte--cardtext--texte {
+  /*div titre + localisation*/
+  background-color: white;
+}
+.section3__cartes--carte--cardtext--texte--titre {
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 2%;
+  transition: ease 0.3s;
+}
+.section3__cartes--carte--cardtext--texte--titre:hover {
+  color: #9356dc;
+}
+.section3__cartes--carte--cardtext--texte--lieu {
+  font-weight: 300;
+}
+
+footer {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  width: 100%;
+}
+footer a {
+  /*liens du footer*/
+  color: white;
+  transition: ease 0.3s;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+.textfooter {
+  /*container du texte*/
+  padding: 5%;
+}
+.textfooter__titre {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.textfooter__cta {
+  /*liens*/
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+.textfooter__cta-1, .textfooter__cta-2 {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+/*Fin du CSS pour la page d'accueil*/
+/*===============================================================================================================================*/
+/*Début du CSS pour les pages "restaurants"*/
+.restaurants__Logo {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.restaurants__Logo__fleche {
+  position: relative;
+  left: 20px;
+  font-size: x-large;
+}
+.restaurants__Logo__text {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0px;
+  font-size: xx-large;
+}
+
+.hero {
+  /*container de l'image hero*/
+  position: relative;
+  top: 100px;
+  z-index: -1;
+}
+.hero__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.menu {
+  padding-top: 10px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: rgb(247, 247, 247);
+  width: 100%;
+}
+.menu__titre {
+  /*animation du coeur*/
+  /*Fin de l'animation du coeur*/
+  /*animation du coeur*/
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__titre .fas {
+  opacity: 0;
+  transition-duration: 0.3s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu__titre i {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__titre input {
+  position: absolute;
+  opacity: 0;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+.menu__titre .fa-heart {
+  font-size: 24px;
+}
+.menu__titre input:checked ~ .far {
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+.menu__titre input:checked ~ .fas {
+  transition-duration: 0.3s;
+  opacity: 1;
+}
+.menu__titre--coeur {
+  margin: auto 0;
+  height: 25px;
+  width: 25px;
+}
+
+.plats {
+  padding: 20px;
+  font-size: 18px;
+  background-color: rgb(247, 247, 247);
+}
+.plats__entree {
+  margin-bottom: 5%;
+}
+.plats__entree--titre {
+  margin-bottom: 3%;
+}
+.plats__entree--ligne {
+  height: 3px;
+  width: 50px;
+  background-color: #99e2d0;
+  margin-bottom: 5%;
+}
+
+/*------------------------------------------CSS d'une carte------------------------------------------*/
+.box {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.carte {
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  height: 90px;
+  display: flex;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.carte:hover .carte__description__icone {
+  margin-right: 0;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0.1s;
+}
+.carte:hover i {
+  transform: rotate(360deg);
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
+}
+.carte__description {
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+}
+.carte__description__texte {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.carte__description__texte--appellation {
+  font-size: 18px;
+  font-weight: 700;
+}
+.carte__description__texte--accompagnement {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.carte__description__prix {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  margin-right: 16px;
+  max-width: 100%;
+  font-weight: 700;
+}
+.carte__description__icone {
+  width: 100px;
+  background: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -100px;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.carte__description__icone > i {
+  color: #99e2d0;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 50%;
+  background: white;
+  transition-duration: 0.5s;
+}
+
+.carte__description__texte > * {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.carte__description__prix {
+  margin-left: 0.5rem;
+}
+
+/*------------------------------------------Fin du CSS de la carte du plat------------------------------------------*/
+.plats__commander {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+  background-color: rgb(247, 247, 247);
+}
+.plats__commander--bouton {
+  /*Bouton*/
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  font-weight: 500;
+  color: rgb(247, 247, 247);
+  padding: 20px 30px;
+  border-radius: 50px;
+  background-image: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  margin-bottom: 50px;
+  transition: ease 0.3s;
+  padding: 20px 50px;
+  margin-bottom: 0px;
+}
+.plats__commander--bouton:hover {
+  background-image: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
+}
+
+#premiere {
+  animation: premiere 1s;
+}
+
+#deuxieme {
+  animation: deuxieme 0.9s;
+}
+
+#troisieme {
+  animation: troisieme 0.8s;
+}
+
+/*Fin du CSS pour les pages "restaurants"*/
+@media (min-width: 834px) {
+  .hero__image {
+    height: 500px;
+  }
+
+  .localisation {
+    padding: 3% 0%;
+  }
+
+  .section2 {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section2__titre, .section3__titre {
+    text-align: center;
+  }
+
+  .section2__steps {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 3%;
+  }
+  .section2__steps--step1 {
+    margin: 15px;
+  }
+  .section2__steps--step1--text, .section2__steps--step2--text, .section2__steps--step3--text {
+    padding: 0px 10px;
+  }
+
+  .section3 {
+    padding-top: 25px;
+  }
+  .section3__titre {
+    text-align: center;
+  }
+
+  .section3__cartes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1080px;
+    padding: 3%;
+  }
+  .section3__cartes--carte {
+    max-width: 45%;
+  }
+
+  .textfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .textfooter__titre {
+    margin: 0px;
+  }
+  .textfooter__cta {
+    margin-bottom: 0px;
+  }
+
+  /*------------------------Fin de la home------------------------*/
+  .restaurants__Logo__fleche {
+    left: 35px;
+  }
+
+  .plats__entree {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .carte {
+    width: 48%;
+  }
+}
+@media (min-width: 1280px) {
+  .localisation {
+    padding: 20px 0px;
+  }
+
+  .section1 {
+    height: 270px;
+  }
+
+  .section2__steps {
+    margin: 3% 2%;
+  }
+  .section2__steps--step1, .section2__steps--step2, .section2__steps--step3 {
+    padding: 30px 50px;
+  }
+  .section2__steps--step1::before, .section2__steps--step2::before, .section2__steps--step3::before {
+    translate: -63px;
+  }
+
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .section3__cartes {
+    max-width: 1500px;
+    margin: 0px 0px;
+    width: 97%;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .section3__cartes--carte {
+    height: 220px;
+    margin: 0px 10px;
+    margin-bottom: 3%;
+  }
+  .section3__cartes--carte--cardimage {
+    height: 150px;
+  }
+  .section3__cartes--carte--cardimage--img {
+    margin-top: -40px;
+  }
+
+  .section3__cartes--carte--cardtext--texte--titre {
+    font-size: medium;
+  }
+
+  .section3__cartes--carte--cardtext--texte--lieu {
+    font-size: 14px;
+  }
+
+  .textfooter {
+    padding: 3% 10%;
+  }
+
+  /*------------------------Fin de la home------------------------*/
+  .hero__image {
+    height: 420px;
+  }
+
+  .menu__titre {
+    padding: 2% 5%;
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  .plats {
+    width: 386px;
+  }
+
+  .menu__plats {
+    width: 1280px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .box {
+    display: block;
+  }
+
+  .carte {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container__1280 {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(247, 247, 247);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

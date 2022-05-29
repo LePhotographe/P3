@@ -1,0 +1,79 @@
+@keyframes anim_loading {
+  0% {
+    transform: rotate(-45deg);
+    scale: 0.5;
+    opacity: 0;
+  }
+  5% {
+    scale: 1;
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(-45deg);
+  }
+  80% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(315deg);
+    scale: 0.5;
+    opacity: 0.5;
+  }
+}
+
+@keyframes chargement {
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes premiere {
+  0% {
+    opacity: 0;
+    translate: -200px;
+  }
+
+  50% {
+    translate: 0px;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes deuxieme {
+  0% {
+    opacity: 0;
+    translate: -400px;
+  }
+
+  75% {
+    translate: 0px;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes troisieme {
+  0% {
+    opacity: 0;
+    translate: -600px;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

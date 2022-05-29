@@ -1,0 +1,172 @@
+@import "variables.scss";
+
+@media (min-width: 834px) {
+  .hero__image {
+    height: 500px;
+  }
+  .localisation {
+    padding: 3% 0%;
+  }
+  .section2 {
+    max-width: 1080px;
+    margin: 0 auto;
+    &__titre {
+      text-align: center;
+    }
+  }
+
+  .section2__steps {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 3%;
+    &--step1 {
+      margin: 15px;
+    }
+    &--step1--text,
+    &--step2--text,
+    &--step3--text {
+      padding: 0px 10px;
+    }
+  }
+
+  .section3 {
+    padding-top: 25px;
+
+    &__titre {
+      text-align: center;
+    }
+  }
+
+  .section3__cartes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1080px;
+    padding: 3%;
+
+    &--carte {
+      max-width: 45%;
+    }
+  }
+
+  .textfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__titre {
+      margin: 0px;
+    }
+    &__cta {
+      margin-bottom: 0px;
+    }
+  }
+  /*------------------------Fin de la home------------------------*/
+  .restaurants__Logo__fleche {
+    left: 35px;
+  }
+  .plats__entree {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .carte {
+    width: 48%;
+  }
+}
+@media (min-width: 1280px) {
+  .localisation {
+    padding: 20px 0px;
+  }
+  .section1 {
+    height: 270px;
+  }
+
+  .section2 {
+    &__steps {
+      margin: 3% 2%;
+
+      &--step1,
+      &--step2,
+      &--step3 {
+        &::before {
+          translate: -63px;
+        }
+        padding: 30px 50px;
+      }
+    }
+  }
+
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__cartes {
+      max-width: 1500px;
+      margin: 0px 0px;
+      width: 97%;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+  }
+  .section3__cartes--carte {
+    height: 220px;
+    margin: 0px 10px;
+    margin-bottom: 3%;
+    &--cardimage {
+      height: 150px;
+      &--img {
+        margin-top: -40px;
+      }
+    }
+  }
+  .section3__cartes--carte--cardtext--texte--titre {
+    font-size: medium;
+  }
+  .section3__cartes--carte--cardtext--texte--lieu {
+    font-size: 14px;
+  }
+  .textfooter {
+    padding: 3% 10%;
+  }
+  /*------------------------Fin de la home------------------------*/
+
+  .hero__image {
+    height: 420px;
+  }
+
+  .menu__titre {
+    padding: 2% 5%;
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+  .plats {
+    width: 386px;
+  }
+
+  .menu__plats {
+    width: 1280px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .box {
+    display: block;
+  }
+  .carte {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container__1280 {
+    display: flex;
+    justify-content: center;
+    background-color: $grisclair;
+  }
+}

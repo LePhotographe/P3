@@ -1,8 +1,35 @@
+@import "variables.scss";
+@import "keyframes.scss";
+@import "mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 
-$primaire: #9356dc;
-$secondaire: #ff79da;
-$tertiaire: #99e2d0;
+.chargement {
+  /*animation de temps de chargement*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  animation: chargement 0.2s ease-in-out;
+  animation-delay: 1.6s;
+  animation-fill-mode: both;
+  z-index: 2;
+
+  &__loading {
+    width: 25%;
+    max-width: 100px;
+    animation: anim_loading 1s ease-in-out;
+    animation-iteration-count: 2;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 1920px;
+  margin: 0 auto;
+}
 
 * {
   margin: 0px;
@@ -17,10 +44,15 @@ body {
   align-items: center;
   align-content: center;
   min-width: 320px;
-  max-width: 450px;
+  /* à supprimer une fois la version mobile terminée*/
   background-color: white;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 h1,
@@ -37,15 +69,25 @@ nav {
 }
 
 button {
+  /*reset du style des boutons*/
   all: initial;
   cursor: pointer;
 }
 
+main {
+  width: 100%;
+}
+
 .logo {
+  position: sticky;
+  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: center;
-  margin: 5% 0%;
+  align-items: center;
   font-size: xx-large;
+  box-shadow: $shadow;
+  z-index: 1;
 }
 
 .localisation {
@@ -53,14 +95,15 @@ button {
   justify-content: center;
   padding: 5% 0%;
   background-color: rgb(224, 224, 224);
-  font-size: 20px;
+  font-size: 15px;
 
   &__marker {
-    padding-right: 25px;
+    padding-right: 15px;
   }
 }
 
 .section1 {
+  /*début de la section1*/
   height: 350px;
   width: 100%;
   display: flex;
@@ -70,44 +113,448 @@ button {
   align-items: center;
   align-content: stretch;
   text-align: center;
-  background-color: rgb(247, 247, 247);
+  background-color: $grisclair;
 
   &__accroche {
+    width: 65%;
     margin-top: 50px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     padding: 0% 10%;
   }
 
   &__description {
+    width: 90%;
     color: dimgray;
     font-size: large;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     padding: 0px 10px;
+    margin-bottom: 20px;
   }
 
   &__explorer {
-    font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: 700;
-    color: rgb(247, 247, 247);
-    padding: 20px 30px;
-    border-radius: 50px;
-    background: rgb(255, 121, 218);
-    background: linear-gradient(175deg, $secondaire 0%, $primaire 100%);
-    margin-bottom: 50px;
+    @include bouton;
   }
 }
+/*fin de la section1*/
+
 .section2 {
-  padding: 0% 10%;
+  /*début de la section2*/
+
   &__titre {
-    margin-top: 50px;
-    font-size: 30px;
+    margin: 0% 7%;
+    margin-top: 25px;
+    font-size: 25px;
     font-weight: 700;
   }
-  &__help {
+  &__steps {
+    /*Container des div étapes*/
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+    &--step1,
+    &--step2,
+    &--step3 {
+      /*boites des étapes*/
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      margin: 15px;
+      border-radius: 20px;
+      background-color: $grisclair;
+      box-shadow: $shadow;
+      transition: $transition;
+
+      &::before {
+        content: attr(data-step);
+        font-size: small;
+        color: white;
+        text-align: center;
+        line-height: 25px;
+        position: absolute;
+        translate: -45px;
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        background-color: $primaire;
+      }
+
+      &:hover {
+        background-color: rgb(247, 237, 255);
+      }
+
+      &:hover > i {
+        color: $primaire;
+      }
+
+      & i {
+        font-size: 19px;
+        color: rgb(126, 126, 126);
+        transition: $transition;
+      }
+
+      &--text {
+        margin: auto;
+        font-weight: 700;
+      }
+    }
+    &--step1 {
+      margin-top: 0px;
+    }
+  }
+}
+/*fin de la section2*/
+.section3 {
+  background-color: $grisclair;
+  padding-top: 10%;
+
+  @include coeur; /*animation du coeur*/
+  &__titre {
+    @extend .section2__titre;
+  }
+
+  &__cartes {
+    /*container de toutes les cartes*/
+    margin: 0px auto;
+    width: 100%;
+    padding: 10% 0%;
+
+    &--carte {
+      /*structure d'une carte*/
+      margin: 0 auto;
+      width: 90%;
+      max-width: 450px;
+      height: 280px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: $shadow;
+      margin-bottom: 5%;
+      transition: $transition;
+
+      &:hover {
+        box-shadow: 0px 5px 12px rgba($color: $primaire, $alpha: 0.3);
+      }
+
+      &--icone {
+        /*container du coeur pour le positionnement correct*/
+        position: relative;
+        width: 24px;
+        height: 24px;
+      }
+
+      &--cardimage {
+        /*container de l'image*/
+        height: 200px;
+        overflow: hidden;
+        border-radius: 20px 20px 0px 0px;
+
+        &--img {
+          /*image avec "nouveau"*/
+          width: 100%;
+          height: 110%;
+          object-fit: cover;
+          margin-top: -50px;
+        }
+
+        &--img--n {
+          /*image SANS "nouveau"*/
+          width: 100%;
+          height: 110%;
+          object-fit: cover;
+        }
+
+        &--nouveau {
+          position: relative;
+          float: right;
+          top: 15px;
+          right: 15px;
+          padding: 7px 12px;
+          padding-bottom: 4px;
+          border-radius: 2px;
+          background-color: $tertiaire;
+          color: darken($color: $tertiaire, $amount: 40%);
+          font-size: 14px;
+          box-shadow: $shadow;
+        }
+      }
+
+      &--cardtext {
+        /*container du texte*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0% 5%;
+        margin-top: 5%;
+
+        &--texte {
+          /*div titre + localisation*/
+          background-color: white;
+
+          &--titre {
+            font-size: large;
+            font-weight: 700;
+            margin-bottom: 2%;
+            transition: $transition;
+
+            &:hover {
+              color: $primaire;
+            }
+          }
+          &--lieu {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  width: 100%;
+
+  a {
+    /*liens du footer*/
+    color: white;
+    transition: $transition;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.textfooter {
+  /*container du texte*/
+  padding: 5%;
+
+  &__titre {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  &__cta {
+    /*liens*/
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 10px;
+    &-1,
+    &-2 {
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
+}
+/*Fin du CSS pour la page d'accueil*/
+/*===============================================================================================================================*/
+/*Début du CSS pour les pages "restaurants"*/
+
+.restaurants__Logo {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__fleche {
+    position: relative;
+    left: 20px;
+    font-size: x-large;
+  }
+
+  &__text {
     display: flex;
     justify-content: center;
+    width: 100%;
+    padding: 30px 0px;
+    font-size: xx-large;
   }
 }
+
+.hero {
+  /*container de l'image hero*/
+  position: relative;
+  top: 100px;
+  z-index: -1;
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+.menu {
+  padding-top: 10px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: $grisclair;
+  width: 100%;
+
+  &__titre {
+    @include coeur; /*animation du coeur*/
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+
+    &--coeur {
+      margin: auto 0;
+      height: 25px;
+      width: 25px;
+    }
+  }
+}
+
+.plats {
+  padding: 20px;
+  font-size: 18px;
+  background-color: $grisclair;
+
+  &__entree {
+    margin-bottom: 5%;
+
+    &--titre {
+      margin-bottom: 3%;
+    }
+    &--ligne {
+      height: 3px;
+      width: 50px;
+      background-color: $tertiaire;
+      margin-bottom: 5%;
+    }
+  }
+}
+/*------------------------------------------CSS d'une carte------------------------------------------*/
+
+.box {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.carte {
+  background-color: white;
+  box-shadow: $shadow;
+  border-radius: 20px;
+  height: 90px;
+  display: flex;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 20px;
+
+  &:hover .carte__description__icone {
+    margin-right: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0.1s;
+  }
+
+  &:hover i {
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+  }
+
+  &__description {
+    width: 100%;
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+
+    &__texte {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 20px;
+      max-width: 100%;
+      overflow: hidden;
+
+      &--appellation {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &--accompagnement {
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+
+    &__prix {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      margin-right: 16px;
+      max-width: 100%;
+      font-weight: 700;
+    }
+
+    &__icone {
+      width: 100px;
+      background: $tertiaire;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: -100px;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+    }
+  }
+}
+
+.carte__description__icone > i {
+  color: $tertiaire;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 50%;
+  background: white;
+  transition-duration: 0.5s;
+}
+
+.carte__description__texte > * {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.carte__description__prix {
+  margin-left: 0.5rem;
+}
+
+/*------------------------------------------Fin du CSS de la carte du plat------------------------------------------*/
+
+.plats__commander {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+  background-color: $grisclair;
+
+  &--bouton {
+    @include bouton;
+    padding: 20px 50px;
+    margin-bottom: 0px;
+  }
+}
+
+#premiere {
+  animation: premiere 1s;
+}
+
+#deuxieme {
+  animation: deuxieme 0.9s;
+}
+
+#troisieme {
+  animation: troisieme 0.8s;
+}
+
+/*Fin du CSS pour les pages "restaurants"*/
+
+@import "mediaqueries.scss";

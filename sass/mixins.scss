@@ -1,0 +1,65 @@
+@mixin coeur {
+  /*animation du coeur*/
+  .fas {
+    opacity: 0;
+    transition-duration: 0.3s;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from($primaire),
+      to($secondaire)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  i {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .fa-heart {
+    font-size: 24px;
+  }
+
+  input:checked ~ .far {
+    transition-duration: 0.3s;
+    opacity: 0;
+  }
+
+  input:checked ~ .fas {
+    transition-duration: 0.3s;
+    opacity: 1;
+  }
+  /*Fin de l'animation du coeur*/
+}
+
+@mixin bouton {
+  /*Bouton*/
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  font-weight: 500;
+  color: $grisclair;
+  padding: 20px 30px;
+  border-radius: 50px;
+  background-image: $degrade;
+  margin-bottom: 50px;
+  transition: $transition;
+
+  &:hover {
+    background-image: $degradeclair;
+  }
+}
