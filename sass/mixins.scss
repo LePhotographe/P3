@@ -3,16 +3,9 @@
   .fas {
     opacity: 0;
     transition-duration: 0.3s;
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from($primaire),
-      to($secondaire)
-    );
-    -webkit-background-clip: text;
+    background-image: linear-gradient($primaire, $secondaire);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   i {
@@ -55,11 +48,14 @@
   color: $grisclair;
   padding: 20px 30px;
   border-radius: 50px;
-  background-image: $degrade;
+  background-image: $gradient;
+  background-size: 800%;
+  background-position: left;
   margin-bottom: 50px;
   transition: $transition;
 
   &:hover {
-    background-image: $degradeclair;
+    background-image: $gradient;
+    background-position: right;
   }
 }

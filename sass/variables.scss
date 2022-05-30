@@ -4,12 +4,12 @@ $secondaire: #ff79da;
 
 $tertiaire: #99e2d0;
 
-$degrade: linear-gradient(175deg, $secondaire 0%, $primaire 100%);
-
-$degradeclair: linear-gradient(
+$gradient: linear-gradient(
   175deg,
-  lighten($secondaire, 10%) 0%,
-  lighten($primaire, 10%) 100%
+  $secondaire,
+  $primaire,
+  lighten($secondaire, 5%),
+  lighten($primaire, 5%)
 );
 
 $grisclair: rgb(247, 247, 247);

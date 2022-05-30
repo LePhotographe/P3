@@ -109,7 +109,6 @@ body {
   align-items: center;
   align-content: center;
   min-width: 320px;
-  /* à supprimer une fois la version mobile terminée*/
   background-color: white;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -203,12 +202,15 @@ main {
   color: rgb(247, 247, 247);
   padding: 20px 30px;
   border-radius: 50px;
-  background-image: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  background-image: linear-gradient(175deg, #ff79da, #9356dc, #ff93e1, #a16be0);
+  background-size: 800%;
+  background-position: left;
   margin-bottom: 50px;
   transition: ease 0.3s;
 }
 .section1__explorer:hover {
-  background-image: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
+  background-image: linear-gradient(175deg, #ff79da, #9356dc, #ff93e1, #a16be0);
+  background-position: right;
 }
 
 /*fin de la section1*/
@@ -281,10 +283,9 @@ main {
 .section3 .fas {
   opacity: 0;
   transition-duration: 0.3s;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
-  -webkit-background-clip: text;
+  background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .section3 i {
   position: absolute;
@@ -481,10 +482,9 @@ footer a:hover {
 .menu__titre .fas {
   opacity: 0;
   transition-duration: 0.3s;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
-  -webkit-background-clip: text;
+  background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .menu__titre i {
   position: absolute;
@@ -643,14 +643,17 @@ footer a:hover {
   color: rgb(247, 247, 247);
   padding: 20px 30px;
   border-radius: 50px;
-  background-image: linear-gradient(175deg, #ff79da 0%, #9356dc 100%);
+  background-image: linear-gradient(175deg, #ff79da, #9356dc, #ff93e1, #a16be0);
+  background-size: 800%;
+  background-position: left;
   margin-bottom: 50px;
   transition: ease 0.3s;
   padding: 20px 50px;
   margin-bottom: 0px;
 }
 .plats__commander--bouton:hover {
-  background-image: linear-gradient(175deg, #fface8 0%, #ae80e5 100%);
+  background-image: linear-gradient(175deg, #ff79da, #9356dc, #ff93e1, #a16be0);
+  background-position: right;
 }
 
 #premiere {
