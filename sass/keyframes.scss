@@ -1,11 +1,11 @@
 @keyframes anim_loading {
   0% {
     transform: rotate(-45deg);
-    scale: 0.5;
+    transform: scale(0.5);
     opacity: 0;
   }
   5% {
-    scale: 1;
+    transform: scale(1);
     opacity: 1;
   }
   20% {
@@ -16,7 +16,7 @@
   }
   100% {
     transform: rotate(315deg);
-    scale: 0.5;
+    transform: scale(0.5);
     opacity: 0.5;
   }
 }
@@ -40,11 +40,11 @@
 @keyframes premiere {
   0% {
     opacity: 0;
-    translate: -200px;
+    transform: translate(-200px);
   }
 
   50% {
-    translate: 0px;
+    transform: translate(0px);
   }
 
   100% {
@@ -55,11 +55,11 @@
 @keyframes deuxieme {
   0% {
     opacity: 0;
-    translate: -400px;
+    transform: translate(-400px);
   }
 
   75% {
-    translate: 0px;
+    transform: translate(0px);
   }
 
   100% {
@@ -70,7 +70,7 @@
 @keyframes troisieme {
   0% {
     opacity: 0;
-    translate: -600px;
+    transform: translate(-600px);
   }
 
   100% {

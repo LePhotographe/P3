@@ -95,7 +95,7 @@
       &--step2,
       &--step3 {
         &::before {
-          translate: -63px;
+          transform: translate(-63px);
         }
         padding: 30px 50px;
       }
